@@ -1,0 +1,7 @@
+FSharp.Core
+Fable.Core
+Fable.Import.Browser
+
+Fable.Elmish
+Fable.Elmish.React
+Fable.React
