@@ -1,14 +1,22 @@
 var path = require("path");
 var webpack = require("webpack");
+var fableUtils = require("fable-utils");
 
 function resolve(filePath) {
   return path.join(__dirname, filePath)
 }
 
-var babelOptions = {
-  presets: [["es2015", { "modules": false }]],
+var babelOptions = fableUtils.resolveBabelOptions({
+  presets: [
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions"]
+      },
+      "modules": false
+    }]
+  ],
   plugins: ["transform-runtime"]
-};
+});
 
 var isProduction = process.argv.indexOf("-p") >= 0;
 console.log("Bundling for " + (isProduction ? "production" : "development") + "...");
@@ -16,6 +24,7 @@ console.log("Bundling for " + (isProduction ? "production" : "development") + ".
 module.exports = [{
   devtool: "source-map",
   entry: resolve('./Client/Client.fsproj'),
+  mode: isProduction ? "production" : "development",
   output: {
     filename: 'bundle.js',
     path: resolve('./public'),
@@ -47,10 +56,15 @@ module.exports = [{
       }
     ]
   },
+  plugins : isProduction ? [] : [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
+  ]
 },
 {
   devtool: "source-map",
   entry: resolve('./Server/Server.fsproj'),
+  mode: isProduction ? "production" : "development",
   target: "node",
   output: {
     filename: 'server.js',

@@ -2,3 +2,5 @@ FSharp.Core
 Fable.Core
 
 Fable.Import.Express
+
+dotnet-fable

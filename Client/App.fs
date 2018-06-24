@@ -17,19 +17,19 @@ let init () =
 
 let update msg model =
   match msg with
-  | Increment -> 
+  | Increment ->
     { model with Counter = model.Counter + 1 }, Cmd.none
 
-  | Decrement -> 
+  | Decrement ->
     { model with Counter = model.Counter - 1 }, Cmd.none
 
-let view model dispatch = 
-  div 
+let view model dispatch =
+  div
     []
     [
-      button [ OnClick (fun _ -> dispatch Increment) ] [ unbox "Increment" ] 
-      div [] [ unbox (string model.Counter) ] 
-      button [ OnClick (fun _ -> dispatch Decrement) ] [ unbox "Decrement" ] 
+      button [ OnClick (fun _ -> dispatch Increment) ] [ unbox "Increment" ]
+      div [] [ unbox (string model.Counter) ]
+      button [ OnClick (fun _ -> dispatch Decrement) ] [ unbox "Decrement" ]
     ]
 
 promise {

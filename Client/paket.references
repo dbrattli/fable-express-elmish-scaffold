@@ -5,3 +5,5 @@ Fable.Import.Browser
 Fable.Elmish
 Fable.Elmish.React
 Fable.React
+
+dotnet-fable
