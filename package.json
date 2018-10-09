@@ -1,27 +1,29 @@
 {
   "private": true,
   "scripts": {
-    "build": "fable webpack -- -p",
-    "start": "webpack && node public/server.js"
+    "start": "node public/server.js"
   },
   "dependencies": {
-    "babel-polyfill": "6.26.0",
-    "babel-runtime": "6.23.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/runtime": "^7.1.2",
     "express": "^4.16.0",
-    "node": "^9.4.0"
+    "node": "^10.11.0"
   },
   "devDependencies": {
-    "babel-core": "6.26.3",
-    "babel-loader": "7.1.4",
-    "babel-plugin-transform-runtime": "6.23.0",
-    "babel-preset-env": "1.6.1",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/runtime": "^7.1.2",
+    "@types/express": "^4.16.0",
+    "babel-loader": "^8.0.4",
     "concurrently": "3.5.1",
-    "fable-loader": "1.1.6",
-    "fable-utils": "1.0.6",
-    "react": "16.3.2",
-    "react-dom": "16.3.2",
-    "webpack": "4.6.0",
-    "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "3.1.4"
+    "fable-loader": "^2.0.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "remotedev": "0.2.7",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.7"
   }
 }

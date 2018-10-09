@@ -1,7 +1,5 @@
 module Backend
 
-open System
-open Fable.Core
 open Fable.Import
 open Fable.Core.JsInterop
 open Fable.Import.express
@@ -28,5 +26,4 @@ let startServer { Port = port } =
 [<EntryPoint>]
 let main _args =
     startServer { Port = 8080 }
-
     0

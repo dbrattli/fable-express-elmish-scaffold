@@ -1,15 +1,15 @@
 source https://api.nuget.org/v3/index.json
 
-nuget Fable.Elmish
-nuget Fable.Elmish.React
+nuget Fable.Elmish 2.0.0
+nuget Fable.Elmish.React 2.0.0
 nuget Fable.Import.Express
 nuget Fable.React
 nuget FSharp.Core
 
 # Keep this version synced with dotnet-fable in .fsproj
-nuget Fable.Core
+nuget Fable.Core 2.0.0
 
 # Add here other Fable libraries like Fable.PowerPack
 nuget Fable.Import.Browser
 
-clitool dotnet-fable
+clitool dotnet-fable 2.0.3
